@@ -41,9 +41,7 @@ sõne=""
 
 for rida in range(len(pilt)):
     if type(read[rida])==int and read[rida]==len(pilt[rida]):
-        for element in read[rida]:
-            sõne+=element*"*"+" "
-        sõne=sõne[0:-1]
+        sõne+=read[rida]*"*"
         for indeks in range(len(sõne)):
             pilt[rida][indeks]=sõne[indeks]
         sõne=""
@@ -57,9 +55,7 @@ for rida in range(len(pilt)):
 
 for veerg in range(len(pilt[0])):
     if type(veerud[veerg])==int and veerud[veerg]==len(pilt[veerg]):
-        for element in veerud[veerg]:
-            sõne+=element*"*"+" "
-        sõne=sõne[0:-1]
+        sõne+=veerud[veerg]*"*"
         for indeks in range(len(sõne)):
             pilt[indeks][veerg]=sõne[indeks]
         sõne=""
