@@ -47,11 +47,14 @@ for rida in range(len(pilt)):
         sõne=""
     elif type(read[rida])==list and sum(read[rida])+len(read[rida])-1==len(pilt[rida]):
         for element in read[rida]:
-            sõne+=element*"*"+" "
+            sõne+=element*"*"+"-"
         sõne=sõne[0:-1]
         for indeks in range(len(sõne)):
             pilt[rida][indeks]=sõne[indeks]
         sõne=""
+    elif type(read[rida])==int and read[rida]>len(pilt[0])/2:
+        for koht in range(len(pilt[0])-read[rida],read[rida]):
+            pilt[rida][koht]="*"
 
 for veerg in range(len(pilt[0])):
     if type(veerud[veerg])==int and veerud[veerg]==len(pilt[veerg]):
@@ -61,11 +64,14 @@ for veerg in range(len(pilt[0])):
         sõne=""
     elif type(veerud[veerg])==list and sum(veerud[veerg])+len(veerud[veerg])-1==len(pilt[veerg]):
         for element in veerud[veerg]:
-            sõne+=element*"*"+" "
+            sõne+=element*"*"+"-"
         sõne=sõne[0:-1]
         for indeks in range(len(sõne)):
             pilt[indeks][veerg]=sõne[indeks]
         sõne=""
-
+    elif type(veerud[veerg])==int and veerud[veerg]>len(pilt[0])/2:
+        for koht in range(len(pilt)-veerud[veerg],veerud[veerg]):
+            pilt[koht][veerg]="*"
+        
 for rida in pilt:
     print(rida)
